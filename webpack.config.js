@@ -1,5 +1,6 @@
 var path =require('path');
 var webpack = require('webpack');
+var ComponentPlugin =require('babel-plugin-transform-react-jsx');
 
 module.exports = {
     entry: [
@@ -19,6 +20,7 @@ module.exports = {
                 exclude: /(node_modules)/,
                 loader: 'babel',
                 query: {
+                    plugins: [["transform-react-jsx", { "pragma": "hJSX" }]],
                     presets: ['es2015']
                 }
             }
