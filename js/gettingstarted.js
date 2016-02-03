@@ -1,6 +1,6 @@
 import Cycle from '@cycle/core';
 import {makeDOMDriver, hJSX} from '@cycle/dom';
-
+console.log("sssdddd")
 function main(drivers) {
     return {
         DOM: drivers.DOM.select('input').events('click')
@@ -8,7 +8,7 @@ function main(drivers) {
             .startWith(false)
             .map(toggled =>
                  <div>
-                    <input type="checkbox" /> Toggle me
+                    <input type="checkbox" />Toggle me
                     <p>{toggled ? 'ON' : 'off'}</p>
                 </div>
             )

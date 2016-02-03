@@ -3,14 +3,23 @@ var webpack = require('webpack');
 var ComponentPlugin =require('babel-plugin-transform-react-jsx');
 
 module.exports = {
-    entry: [
-        'webpack/hot/dev-server',
-        'webpack-dev-server/client?http://localhost:8080',
-        path.resolve(__dirname, 'entry.js')
-    ],
+    devServer: {
+        port: 8080,
+        contentBase: 'build/',
+        historyApiFallback: {
+            index: 'gettingstarted.html',
+            rewrites: [
+                { from: /\/egghead-01/, to: 'egghead-01.html'}
+            ]
+        }
+    },
+    entry: {
+        "getting-started": [path.resolve(__dirname, 'js/gettingstarted.js'),'webpack/hot/dev-server'],
+        "egghead-01": [path.resolve(__dirname, 'js/egghead-01.js'),'webpack/hot/dev-server']
+    },
     output: {
         path: path.resolve(__dirname, "build"),
-        filename: 'bundle.js'
+        filename: '[name].js'
     },
     module: {
         loaders: [

@@ -17,7 +17,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --config webpack.config.js | webpack-dev-server --config webpack.config.js --port 8080 --hot --history-api-fallback --progress --colors --content-base build/"
+    "start": "webpack --config webpack.config.js | webpack-dev-server --config webpack.config.js --inline --hot"
   },
   "author": "",
   "license": "ISC"
