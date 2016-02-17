@@ -12,7 +12,8 @@ module.exports = {
                 { from: /\/egghead-01/, to: 'egghead-01.html'},
                 { from: /\/egghead-02/, to: 'egghead-02.html'},
                 { from: /\/egghead-03/, to: 'egghead-03.html'},
-                { from: /\/egghead-04/, to: 'egghead-04.html'}
+                { from: /\/egghead-04/, to: 'egghead-04.html'},
+                { from: /\/egghead-05/, to: 'egghead-05.html'}
             ]
         }
     },
@@ -21,7 +22,8 @@ module.exports = {
         "egghead-01": [path.resolve(__dirname, 'js/egghead-01.js'),'webpack/hot/dev-server'],
         "egghead-02": [path.resolve(__dirname, 'js/egghead-02.js'),'webpack/hot/dev-server'],
         "egghead-03": [path.resolve(__dirname, 'js/egghead-03.js'),'webpack/hot/dev-server'],
-        "egghead-04": [path.resolve(__dirname, 'js/egghead-04.js'),'webpack/hot/dev-server']
+        "egghead-04": [path.resolve(__dirname, 'js/egghead-04.js'),'webpack/hot/dev-server'],
+        "egghead-05": [path.resolve(__dirname, 'js/egghead-05.js'),'webpack/hot/dev-server']
     },
     output: {
         path: path.resolve(__dirname, "build"),

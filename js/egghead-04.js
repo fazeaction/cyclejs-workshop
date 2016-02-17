@@ -9,11 +9,12 @@ function main(){
     }
 }
 
-function DOMDriverEffect (text$){
+function DOMDriver (text$){
     text$.subscribe(text => {
         const container = document.querySelector('#app');
         container.textContent = text;
     })
+
 }
 
 function consoleLogDriver (msg$){
@@ -30,7 +31,7 @@ function run(mainFn,effects){
 }
 
 const drivers ={
-    DOM:DOMDriverEffect,
+    DOM:DOMDriver,
     Log:consoleLogDriver
 }
 
