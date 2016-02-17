@@ -3,26 +3,37 @@ import Rx from 'rx';
 function main(){
     return {
         DOM:Rx.Observable.timer(0, 1000)
-        .map(i => `Seconds elapsed ${i}`),
+            .map(i => `Seconds elapsed ${i}`),
         Log:Rx.Observable.timer(0, 2000)
             .map(i => 2*i),
     }
 }
 
-function DOMEffect (text$){
+function DOMDriverEffect (text$){
     text$.subscribe(text => {
         const container = document.querySelector('#app');
         container.textContent = text;
     })
 }
 
-function consoleLogEffect (msg$){
+function consoleLogDriver (msg$){
     msg$.subscribe(msg => {
         console.log(msg);
     })
 }
 
-const sinks = main();
+function run(mainFn,effects){
+    const sinks = mainFn();
+    Object.keys(effects).forEach(key => {
+        effects[key](sinks[key]);
+    })
+}
 
-DOMEffect(sinks.DOM)
-consoleLogEffect(sinks.Log)
+const drivers ={
+    DOM:DOMDriverEffect,
+    Log:consoleLogDriver
+}
+
+run(main,drivers);
+
+
