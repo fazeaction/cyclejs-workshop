@@ -10,14 +10,16 @@ module.exports = {
             index: 'gettingstarted.html',
             rewrites: [
                 { from: /\/egghead-01/, to: 'egghead-01.html'},
-                { from: /\/egghead-02/, to: 'egghead-02.html'}
+                { from: /\/egghead-02/, to: 'egghead-02.html'},
+                { from: /\/egghead-03/, to: 'egghead-03.html'},
             ]
         }
     },
     entry: {
         "getting-started": [path.resolve(__dirname, 'js/gettingstarted.js'),'webpack/hot/dev-server'],
         "egghead-01": [path.resolve(__dirname, 'js/egghead-01.js'),'webpack/hot/dev-server'],
-        "egghead-02": [path.resolve(__dirname, 'js/egghead-02.js'),'webpack/hot/dev-server']
+        "egghead-02": [path.resolve(__dirname, 'js/egghead-02.js'),'webpack/hot/dev-server'],
+        "egghead-03": [path.resolve(__dirname, 'js/egghead-03.js'),'webpack/hot/dev-server']
     },
     output: {
         path: path.resolve(__dirname, "build"),
